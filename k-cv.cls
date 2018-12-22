@@ -196,6 +196,7 @@ minimum height=2cm, yshift=0.5mm] (box) at (current page.north){};
   \let\section\oldsection
 }
 
+
 %%%%%%%%%%%%%%%%
 % Other tweaks %
 %%%%%%%%%%%%%%%%

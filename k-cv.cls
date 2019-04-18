@@ -117,7 +117,8 @@ minimum height=2cm, yshift=0.5mm] (box) at (current page.north){};
         red\or%
         orange\or%
         green\or%
-        purple\else%
+        purple\or%
+        blue\else%
         headercolor\fi%
     } #1#2#3%
   }%

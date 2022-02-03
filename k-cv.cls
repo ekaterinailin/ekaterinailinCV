@@ -67,7 +67,7 @@
 \RequirePackage{tikz}
 
 \newcommand{\rolefont}{%
-  \fontsize{14pt}{24pt}\selectfont%
+  \fontsize{12pt}{20pt}\selectfont%
   \thinfont%
   \color{white}%
 }
@@ -75,17 +75,17 @@
 \newcommand{\header}[3]{%
   \begin{tikzpicture}[remember picture,overlay]
     \node [rectangle, fill=fillheader, anchor=north, minimum width=\paperwidth,
-minimum height=4cm, yshift=0.5mm] (box) at (current page.north){};
+minimum height=2.3cm, yshift=0.2mm] (box) at (current page.north){};
     \node [anchor=center] (name) at (box) {%
-      \fontsize{48pt}{72pt}\color{header}%
+      \fontsize{20pt}{32pt}\color{header}%
       {\thinfont #1}{\bodyfont  #2}
     };
     \node [anchor=north] at (name.south) {%
-      \fontsize{18pt}{24pt}\color{header}%
+      \fontsize{14pt}{24pt}\color{header}%
       \thinfont #3%
     };
   \end{tikzpicture}
-  \vspace{2.5cm}
+  \vspace{0.5cm}
   \vspace{-2\parskip}
 }
 
@@ -113,13 +113,14 @@ minimum height=2cm, yshift=0.5mm] (box) at (current page.north){};
   {%
     \color{%
       \ifcase\value{colorCounter}%
-        blue\or%
         red\or%
-        orange\or%
-        green\or%
-        purple\or%
-        blue\else%
-        headercolor\fi%
+        red\or%
+        red\or%
+        red\or%
+        red\or%
+        red\or%
+        red\else%
+        red\fi%
     } #1#2#3%
   }%
   \stepcounter{colorCounter}%
@@ -128,7 +129,7 @@ minimum height=2cm, yshift=0.5mm] (box) at (current page.north){};
 \renewcommand{\section}[1]{
   \par\vspace{\parskip}
   {%
-    \LARGE\headingfont\color{headercolor}%
+    \Large\headingfont\color{headercolor}%
     \@sectioncolor #1%
   }
   \par\vspace{\parskip}
@@ -155,7 +156,7 @@ minimum height=2cm, yshift=0.5mm] (box) at (current page.north){};
 \renewcommand{\bfseries}{\headingfont\color{headercolor}}
 \newcommand{\entry}[4]{%
 \hangindent=3mm \hangafter1%
-  {\leavevmode\color{gray}\small #1}&\parbox[t]{11.8cm}{%
+  {\leavevmode\color{gray}\small #1}&\parbox[t]{14.8cm}{%
     \textbf{#2}%
     \hfill%
     {\footnotesize\color{gray} \bodyfont #3}\\%
@@ -179,30 +180,30 @@ minimum height=2cm, yshift=0.5mm] (box) at (current page.north){};
 % Side block %
 %%%%%%%%%%%%%%
 
-\RequirePackage[absolute,overlay]{textpos}
-\setlength{\TPHorizModule}{1cm}
-\setlength{\TPVertModule}{1cm}
-\newenvironment{aside}{%
-  \let\oldsection\section
-  \renewcommand{\section}[1]{
-    \par\vspace{\baselineskip}{\Large\headingfont\color{headercolor} ##1}
-  }
-  \begin{textblock}{3.6}(1.5, 4.33)
-  \begin{flushright}
-  \obeycr
-}{%
-  \restorecr
-  \end{flushright}
-  \end{textblock}
-  \let\section\oldsection
-}
+% \RequirePackage[absolute,overlay]{textpos}
+% \setlength{\TPHorizModule}{1cm}
+% \setlength{\TPVertModule}{1cm}
+% \newenvironment{aside}{%
+%   \let\oldsection\section
+%   \renewcommand{\section}[1]{
+%     \par\vspace{\baselineskip}{\Large\headingfont\color{headercolor} ##1}
+%   }
+%   \begin{textblock}{3.6}(1.5, 4.33)
+%   \begin{flushright}
+%   \obeycr
+% }{%
+%   \restorecr
+%   \end{flushright}
+%   \end{textblock}
+%   \let\section\oldsection
+% }
 
 
 %%%%%%%%%%%%%%%%
 % Other tweaks %
 %%%%%%%%%%%%%%%%
 
-\RequirePackage[left=6.1cm,top=2cm,right=1.5cm,bottom=2.5cm,nohead,nofoot]{geometry}
+\RequirePackage[left=2cm,top=1.7cm,right=2cm,bottom=1.5cm,nohead,nofoot]{geometry}
 \RequirePackage[hidelinks]{hyperref}
 \hypersetup{
-    colorlinks=false}
+    colorlinks=False}

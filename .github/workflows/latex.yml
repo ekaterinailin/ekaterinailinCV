@@ -27,4 +27,7 @@ jobs:
 
       - name: Github Action for LaTeX
         uses: xu-cheng/latex-action@v2
+        with:
+          root_file:
+            CV_Ekaterina_Ilin.tex
 
